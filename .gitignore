@@ -1,0 +1,9 @@
+.lake/
+*.olean
+*.ilean
+*.o
+*.obj
+*.c
+.DS_Store
+Thumbs.db
+

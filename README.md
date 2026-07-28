@@ -1,13 +1,13 @@
-# Lean 4 formalization of Erd艖s Problem 279
+# Lean 4 formalization of Erdős Problem 279
 
 This project contains an unconditional Lean 4 proof of the affirmative
-statement of Erd艖s Problem 279.
+statement of Erdős Problem 279.
 
 The exact formal statement is:
 
 ```lean
 def GlobalAffirmative : Prop :=
-  鈭€ k : Nat, 3 鈮?k 鈫?P k
+  ∀ k : Nat, 3 ≤ k → P k
 ```
 
 where `P k` says that there is one choice of a canonical residue class
@@ -72,13 +72,13 @@ The formalization includes:
 - an imported-and-audited Mathlib Selberg upper sieve;
 - a translated-interval Selberg bound with explicit remainder control;
 - a two-residue quotient sieve for each hard layer;
-- uniform error estimates at the cutoff `鈱奨^(1/64)鈱媊;
+- uniform error estimates at the cutoff `⌊X^(1/64)⌋`;
 - summation over all hard layers, the controller-reservoir capacity gap,
   and the final dynamic construction.
 
 The last analytic step uses a direct two-residue Selberg sieve.  It proves
 the bound needed by the paper's construction without requiring a separate
-formalization of Bombieri鈥揤inogradov or Selberg鈥揇elange.
+formalization of Bombieri–Vinogradov or Selberg–Delange.
 
 ## Main files
 

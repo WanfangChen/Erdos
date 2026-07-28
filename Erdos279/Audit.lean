@@ -1,0 +1,111 @@
+import Erdos279.BasicLemmas
+import Erdos279.FiniteCSP
+import Erdos279.Compactness
+import Erdos279.Shifted
+import Erdos279.Completion
+import Erdos279.Semigroup
+import Erdos279.CausalBackup
+import Erdos279.ControllerValidity
+import Erdos279.BaseCoverage
+import Erdos279.Factorization
+import Erdos279.CausalUpdate
+import Erdos279.SmoothHard
+import Erdos279.ElementaryCompletion
+import Erdos279.PrimeExistence
+import Erdos279.ConstructionCore
+import Erdos279.BatchCausalUpdates
+import Erdos279.Stabilization
+import Erdos279.StagedConstruction
+import Erdos279.ConstructionPartition
+import Erdos279.PrimeTargetMatching
+import Erdos279.HardReservoirStage
+import Erdos279.ArithmeticProgressionWeightedPNT
+import Erdos279.AllFixedProgressionPNT
+import Erdos279.DirectUniformHardReduction
+
+/-!
+Run this file to inspect the trusted dependencies of the principal proved
+lemmas.  Conditional compactness theorems take `AssignmentCompactness` as an
+ordinary explicit argument; it is not declared as an axiom.
+
+The final two checks deliberately print the remaining construction premise.
+A theorem having no custom axioms can still be conditional on an explicit
+argument, so the signature audit is as important as `#print axioms`.
+-/
+
+#print axioms Erdos279.coversInt_iff_matureCovers
+#print axioms Erdos279.P_mono_level
+#print axioms Erdos279.not_P_iff_obstructionAt
+#print axioms Erdos279.not_globalAffirmative_iff_globalNegative
+#print axioms Erdos279.finiteCSP_iff_globalWindow
+#print axioms Erdos279.P_implies_all_finiteCSP
+#print axioms Erdos279.P_iff_all_finiteCSP_of_compactness
+#print axioms Erdos279.assignmentCompactness_pureStd
+#print axioms Erdos279.P_iff_all_finiteCSP
+#print axioms Erdos279.not_P_iff_arbitrarilyUnsat
+#print axioms Erdos279.P_of_shiftedCoversTail
+#print axioms Erdos279.P_of_completionData
+#print axioms Erdos279.globalAffirmative_of_completionData
+#print axioms Erdos279.ControllerSemigroup.mod_h_eq_one
+#print axioms Erdos279.causal_backup_witness
+#print axioms Erdos279.controllerResidue_ne_zero
+#print axioms Erdos279.controller_mature_from_annulus
+#print axioms Erdos279.smallOutside_covered_by_zero_classes
+#print axioms Erdos279.exists_isPrime_dvd
+#print axioms Erdos279.prime_mod_prime_ne_zero_of_lt
+#print axioms Erdos279.hasHardForm_controller_cofactor_ge_hub
+#print axioms Erdos279.outsideLarge_isPrime
+#print axioms Erdos279.causal_backup_witness_unconditional
+#print axioms Erdos279.hardForm_controllerResidue_ne_zero
+#print axioms Erdos279.hardForm_controller_pair_valid
+#print axioms Erdos279.causal_update_preserves_covered_prefix
+#print axioms Erdos279.smoothFor_controllerSemigroup_of_not_dvd
+#print axioms Erdos279.ControllerSemigroup.primeDivisor_mem
+#print axioms Erdos279.HasHardForm.hardTarget
+#print axioms Erdos279.smoothFor_hasHardForm_of_dvd
+#print axioms Erdos279.hardTarget_hasHardForm
+#print axioms Erdos279.positive_hardTarget_iff_hasHardForm
+#print axioms Erdos279.completion_smoothNoHub_from_hub
+#print axioms Erdos279.completion_smoothNoHub_from_threshold
+#print axioms Erdos279.completionData_of_hardForm_and_prime
+#print axioms Erdos279.P_of_hardForm_and_prime
+#print axioms Erdos279.exists_prime_gt
+#print axioms Erdos279.PaperConstructionCore.toCompletionData
+#print axioms Erdos279.P_of_paperConstructionCore
+#print axioms Erdos279.globalAffirmative_of_paperConstructionCore
+#print axioms Erdos279.applyControllerUpdates_preserves_covered_prefix
+#print axioms Erdos279.StabilizingAssignments.cofinallyCovers_final
+#print axioms Erdos279.StabilizingAssignments.P_of_eventual_staged_tail
+#print axioms Erdos279.OneShotSchedule.toStabilizingAssignments
+#print axioms Erdos279.StagedPaperConstruction.toCore
+#print axioms Erdos279.globalAffirmative_of_stagedPaperConstruction
+#print axioms Erdos279.HTSPriority.role_eq_S_iff
+#print axioms Erdos279.HubHTSLayout.initialAssignment_hub
+#print axioms Erdos279.ImmutableReservoirPlan.no_reselection
+#print axioms Erdos279.ImmutableReservoirPlan.coordinate_eventually_final
+#print axioms Erdos279.ImmutableReservoirPlan.toStabilizingAssignments
+#print axioms Erdos279.ImmutableReservoirPlan.final_toStabilizingAssignments
+#print axioms Erdos279.FiniteReservoirStage.controllers_disjoint
+#print axioms Erdos279.RecordedFiniteReservoirStage.assignment_paired_mod_from_stage
+#print axioms Erdos279.RecordedFiniteReservoirStage.covers_paired_from_stage
+#print axioms Erdos279.RecordedFiniteReservoirStage.finalAssignment_covers_paired
+#print axioms Erdos279.PrimeTargetPair.residue_ne_zero
+#print axioms Erdos279.PrimeTargetMatching.assignment_at_controller
+#print axioms Erdos279.PrimeTargetMatching.exists_single_nonzero_assignment
+#print axioms Erdos279.CertifiedHardReservoirStage.final_pair_valid
+#print axioms Erdos279.CertifiedHardReservoirStage.stage_pair_valid
+#print axioms Erdos279.CertifiedHardReservoirStage.paired_eventuallyCovers
+#print axioms Erdos279.weightedProgressionPNT
+#print axioms Erdos279.progressionTheta_isEquivalent
+#print axioms Erdos279.progressionPrimeCountReal_tendsto
+#print axioms Erdos279.fixedProgressionPrimeNumberTheorem
+#print axioms Erdos279.allFixedProgressionPrimeNumberTheorems
+#print axioms Erdos279.globalAffirmative_direct
+#check Erdos279.globalAffirmative_direct
+#print axioms Erdos279.globalAffirmative
+#check Erdos279.globalAffirmative
+
+#check Erdos279.RemainingPaperConstruction
+#check Erdos279.globalAffirmative_of_paperConstructionCore
+#check Erdos279.RemainingStagedPaperConstruction
+#check Erdos279.globalAffirmative_of_stagedPaperConstruction

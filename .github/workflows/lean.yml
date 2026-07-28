@@ -1,0 +1,26 @@
+name: Lean verification
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and independently type-check
+        uses: leanprover/lean-action@v1
+        with:
+          build: true
+          nanoda: true
+          nanoda-allow-sorry: false
+
+      - name: Print trusted dependencies of the final theorem
+        run: lake env lean Erdos279/Audit.lean
+
