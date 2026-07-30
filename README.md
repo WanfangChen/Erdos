@@ -49,7 +49,7 @@ lake env lean Erdos279/Audit.lean
 ```
 
 The repository deliberately excludes `.lake/`. Lake reconstructs that
-dependency and build cache from the committed `lakefile.toml`,
+dependency and build cache from the committed `lakefile.lean`,
 `lake-manifest.json`, and `lean-toolchain`.
 
 GitHub Actions runs the build, rejects `sorryAx` through an independent
