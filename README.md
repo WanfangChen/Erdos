@@ -52,9 +52,9 @@ The repository deliberately excludes `.lake/`. Lake reconstructs that
 dependency and build cache from the committed `lakefile.lean`,
 `lake-manifest.json`, and `lean-toolchain`.
 
-GitHub Actions runs the build, rejects `sorryAx` through an independent
-`nanoda` type check, and prints the trusted dependencies of the final
-theorem on every push and pull request.
+GitHub Actions runs the build, replay-checks the compiled environment with
+`leanchecker`, rejects unfinished proof placeholders, and verifies the
+trusted dependencies of the final theorem on every push and pull request.
 
 ## Proof architecture
 

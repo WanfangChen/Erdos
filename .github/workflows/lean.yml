@@ -14,13 +14,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build and independently type-check
+      - name: Build and replay-check the compiled environment
         uses: leanprover/lean-action@v1
         with:
           build: true
-          nanoda: true
-          nanoda-allow-sorry: false
+          leanchecker: true
 
-      - name: Print trusted dependencies of the final theorem
-        run: lake env lean Erdos279/Audit.lean
+      - name: Reject unfinished proof placeholders
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE --include='*.lean' \
+            '(^|[^[:alnum:]_])(sorry|admit|sorryAx)([^[:alnum:]_]|$)' \
+            Erdos279 Erdos279.lean; then
+            echo "::error::Found an unfinished proof placeholder"
+            exit 1
+          fi
 
+      - name: Verify trusted dependencies of the final theorem
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env lean Erdos279/Audit.lean 2>&1 | tee audit.log
+          if grep -Fq "sorryAx" audit.log; then
+            echo "::error::The audit depends on sorryAx"
+            exit 1
+          fi
+          grep -Fq \
+            "'Erdos279.globalAffirmative' depends on axioms: [propext, Classical.choice, Quot.sound]" \
+            audit.log
