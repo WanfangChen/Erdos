@@ -23,6 +23,19 @@ theorem Erdos279.globalAffirmative :
 
 It has no mathematical hypotheses.
 
+The exact affirmative right-hand side of DeepMind's
+`FormalConjectures/ErdosProblems/279.lean` is reproduced as
+`Erdos279.DeepMindErdos279Affirmative`.  The bridge theorem
+
+```lean
+theorem Erdos279.globalAffirmative_iff_deepMindErdos279Affirmative :
+    Erdos279.GlobalAffirmative ↔ Erdos279.DeepMindErdos279Affirmative
+```
+
+proves that the two encodings are logically equivalent, and
+`Erdos279.deepMindErdos279Affirmative` proves the DeepMind proposition
+unconditionally.
+
 ## Verification
 
 - Lean toolchain: `v4.27.0-rc1`
@@ -89,4 +102,6 @@ formalization of Bombieri–Vinogradov or Selberg–Delange.
 - `Erdos279/DualSieveAsymptotic.lean`: uniform asymptotic bound.
 - `Erdos279/DirectUniformHardReduction.lean`: capacity comparison and the
   unconditional final theorem.
+- `Erdos279/DeepMindBridge.lean`: exact equivalence with the Formal Conjectures
+  statement.
 - `Erdos279/Audit.lean`: kernel dependency audit.
