@@ -22,6 +22,7 @@ import Erdos279.HardReservoirStage
 import Erdos279.ArithmeticProgressionWeightedPNT
 import Erdos279.AllFixedProgressionPNT
 import Erdos279.DirectUniformHardReduction
+import Erdos279.DeepMindBridge
 
 /-!
 Run this file to inspect the trusted dependencies of the principal proved
@@ -104,6 +105,10 @@ argument, so the signature audit is as important as `#print axioms`.
 #check Erdos279.globalAffirmative_direct
 #print axioms Erdos279.globalAffirmative
 #check Erdos279.globalAffirmative
+#print axioms Erdos279.globalAffirmative_iff_deepMindErdos279Affirmative
+#check Erdos279.globalAffirmative_iff_deepMindErdos279Affirmative
+#print axioms Erdos279.deepMindErdos279Affirmative
+#check Erdos279.deepMindErdos279Affirmative
 
 #check Erdos279.RemainingPaperConstruction
 #check Erdos279.globalAffirmative_of_paperConstructionCore
